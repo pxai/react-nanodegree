@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import ListContacts from './ListContacts'
+
+// User prop-types to make sure that what we pass is
+// of proper type: arrays, objects, or whatever
 /**
  * React compares the previous output and new output, determines what has changed, and makes these decisions for us. 
  * This process of determining what has changed in the previous and new outputs is called Reconciliation.
@@ -30,7 +33,7 @@ class App extends Component {
   }
 
 removeContact = (contact) =>  {
-  this.setState((state) => ({
+  this.setState((state) => ({ // Though the initial state of this component contains two properties (subject and message), they can be updated independently.
     contacts:state.contacts.filter( (c) => c.id !== contact.id)
   }))
 }

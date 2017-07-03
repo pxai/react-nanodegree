@@ -1,4 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'
+
+// User prop-types to make sure that what we pass is
+// of proper type: arrays, objects, or whatever
+// Defined below
 
 // This is a stateless function component!!
 // It does not need this keyword
@@ -54,4 +59,9 @@ class ListContacts extends Component {
     }
 }
 */
+
+ListContacts.propTypes = {
+    contacts: PropTypes.array.isRequired,
+    onDeleteContact: PropTypes.func.isRequired
+}
 export default ListContacts;
