@@ -8,6 +8,7 @@
 
 # production
 /build
+/reactnd-contacts-complete-official
 
 # misc
 .DS_Store
