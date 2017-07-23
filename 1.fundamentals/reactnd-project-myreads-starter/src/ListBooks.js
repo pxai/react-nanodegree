@@ -18,10 +18,11 @@ class ListBooks extends React.Component {
             <div className="list-books-content">
               <div>
                 {
-                 categories.map((category) =>
+                 this.props.categories.map((category) =>
                    (
                       <BookShelf title={category.name} 
-                          books={books.filter(
+                          onUpdateBook={this.props.onUpdateBook}
+                          books={this.props.books.filter(
                               (book) => (book.status===category.status))} 
                       />
                    ))

@@ -7,6 +7,7 @@ class BookShelf extends React.Component {
 
     }
     render () {
+      
         return (
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">{this.props.title}</h2>
@@ -16,7 +17,7 @@ class BookShelf extends React.Component {
                    this.props.books.map((book) =>
                    (
                       <li>
-                            <Book book={book} />
+                            <Book book={book} onUpdateBook={this.props.onUpdateBook} />
                       </li>
                    ))}
                     </ol>
