@@ -20,11 +20,12 @@ class BooksApp extends React.Component {
   }
 
  state = {
-    books: booksdata,
+    books: [], //booksdata,
     categories: categories
   }
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
+      console.log(books);
       this.setState({ books })
     })
   }

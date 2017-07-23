@@ -17,7 +17,7 @@ class CreateBook extends Component {
             <div>
                 <Link className="close-create-contact" to="/">Close</Link>
                 <form onSubmit={this.handleSubmit} className="create-contact-form">
-                        <div className="create-contact-details">
+                        <div className="create-book-details">
                                       <ImageInput
             className='create-contact-avatar-input'
             name='bookUrl'
@@ -26,12 +26,23 @@ class CreateBook extends Component {
                             <div><label for="title">Title</label></div>
                             <div><input type="text" name="title" 
                                     placeholder="Book title here"/></div>
-                            <div><label for="title">Author</label></div>
+                            <div><label for="author">Author</label></div>
                             <div><input type="text" name="author" 
                                     placeholder="Author's name" /></div>
-                            <div><label for="title">Status</label></div>
-                            <div><input type="text"  name="status" 
-                                    placeholder="Book status"  /></div>
+                            <div><label for="status">Status</label></div>
+                            <div><select name="status">
+                                <option value="none" disabled>Move to...</option>
+                                <option value="currentlyReading">Currently Reading</option>
+                                <option value="wantToRead">Want to Read</option>
+                                <option value="read">Read</option>
+                                <option value="none">None</option>
+                              </select></div>
+                            <div><label for="image">Image</label></div>
+                            <div><ImageInput
+                                    className='create-contact-avatar-input'
+                                    name='bookUrl'
+                                    maxHeight={64}
+                                /></div>
                             <button>Create</button>
                         </div>
                     </form>

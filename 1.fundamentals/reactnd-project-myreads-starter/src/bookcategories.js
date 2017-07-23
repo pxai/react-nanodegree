@@ -1,14 +1,14 @@
 const categories =  [
                         {   
-                            "status" : "currentlyReading",
+                            "shelf" : "currentlyReading",
                             "name"  : "Currently Reading..."
                         },
                         {
-                            "status" : "wantToRead",
+                            "shelf" : "wantToRead",
                             "name"  : "Want to Read"
                         },
                         {
-                            "status" : "read",
+                            "shelf" : "read",
                             "name"  : "Read"
                         }
             ]
