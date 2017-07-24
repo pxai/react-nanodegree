@@ -19,7 +19,7 @@ class ListBooks extends React.Component {
                 {
                  this.props.categories.map((category) =>
                    (
-                      <BookShelf title={category.name} 
+                      <BookShelf key={category.shelf} title={category.name} 
                           onUpdateBook={this.props.onUpdateBook}
                           books={this.props.books.filter(
                               (book) => (book.shelf===category.shelf))} 
