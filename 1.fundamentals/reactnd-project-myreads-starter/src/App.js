@@ -33,6 +33,10 @@ class BooksApp extends React.Component {
     this.setState((state) => ({
       books: state.books.filter((c) => c.id !== book.id)
     }))
+    this.setState(state => ({
+        books: state.books.concat([ book ])
+      }))
+      
     //BooksAPI.update(book)
   }
 
@@ -43,7 +47,7 @@ class BooksApp extends React.Component {
       this.setState(state => ({
         books: state.books.concat([ book ])
       }))
-    //})*/
+    //})
   }
 
   render() {
