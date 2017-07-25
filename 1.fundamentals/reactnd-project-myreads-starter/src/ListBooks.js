@@ -10,10 +10,7 @@ class ListBooks extends React.Component {
 
     render () {
         return (
-          <div className="list-books">
-            <div className="list-books-title">
-              <h1>Pello's MyReads</h1>
-            </div>
+
 
             <div className="list-books-content">
 
@@ -30,13 +27,7 @@ class ListBooks extends React.Component {
                 } 
               </div>
             </div>
-            <div className="open-search">
-              <Link to='/search' className='open-search'>Search</Link>
-            </div>
-            <div className="open-create">
-              <Link to='/create' className='add-book'>Add a book</Link>
-            </div>
-          </div>
+
         )    
     }
 }

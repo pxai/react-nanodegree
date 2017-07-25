@@ -7,6 +7,7 @@ import SearchBooks from './SearchBooks'
 import CreateBook from './CreateBook'
 import booksdata from './bookdata'
 import categories from './bookcategories'
+import { Link } from 'react-router-dom';
 
 class BooksApp extends React.Component {
   state = {
@@ -40,6 +41,14 @@ class BooksApp extends React.Component {
     BooksAPI.update(book)
   }
 
+  searchBook = (term) => {
+    this.setState((state) => ({
+      books: state.books.filter((c) => c.title === term)
+    }))
+
+    //BooksAPI.update(book)
+  }
+
 
     createBook(book) {
       book.image = { width: 128, height: 192, backgroundImage: 'url("http://books.google.com/books/content?id=32haAAAAMAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72yckZ5f5bDFVIf7BGPbjA0KYYtlQ__nWB-hI_YZmZ-fScYwFy4O_fWOcPwf-pgv3pPQNJP_sT5J_xOUciD8WaKmevh1rUR-1jk7g1aCD_KeJaOpjVu0cm_11BBIUXdxbFkVMdi&source=gbs_api")' };
@@ -53,13 +62,23 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
+        <div className="list-books">
+            <div className="list-books-title">
+              <h1>Pello's MyReads</h1>
+            </div>
+
         <Route path="/" exact render={() => (
             <ListBooks books={this.state.books} categories={categories} 
               onUpdateBook={(book) => this.updateBook(book)}
             />
         )}/>
-        <Route path="/search" exact render={() => (
-            <SearchBooks />
+        <Route path="/search" exact render={({history}) => (
+            <SearchBooks 
+              onSearchBook={(book) => {
+              this.searchBook(book)
+              history.push('/')
+            }}
+            />
         )}/>
         <Route path='/create' render={({ history }) => (
           <CreateBook
@@ -69,7 +88,13 @@ class BooksApp extends React.Component {
             }}
           />
         )}/>
-
+            <div className="open-search">
+              <Link to='/search' className='open-search'>Search</Link>
+            </div>
+            <div className="open-create">
+              <Link to='/create' className='add-book'>Add a book</Link>
+            </div>
+      </div>
       </div>
     )
   }
