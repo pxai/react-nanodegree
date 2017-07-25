@@ -12,9 +12,11 @@ class ListBooks extends React.Component {
         return (
           <div className="list-books">
             <div className="list-books-title">
-              <h1>MyReads</h1>
+              <h1>Pello's MyReads</h1>
             </div>
+
             <div className="list-books-content">
+
               <div>
                 {
                  this.props.categories.map((category) =>
@@ -29,6 +31,9 @@ class ListBooks extends React.Component {
               </div>
             </div>
             <div className="open-search">
+              <Link to='/search' className='open-search'>Search</Link>
+            </div>
+            <div className="open-create">
               <Link to='/create' className='add-book'>Add a book</Link>
             </div>
           </div>

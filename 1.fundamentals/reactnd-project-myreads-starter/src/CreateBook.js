@@ -23,13 +23,13 @@ class CreateBook extends Component {
             name='bookUrl'
             maxHeight={64}
           />
-                            <div><label for="title">Title</label></div>
+                            <div><label htmlFor="title">Title</label></div>
                             <div><input type="text" name="title" 
                                     placeholder="Book title here"/></div>
-                            <div><label for="author">Author</label></div>
+                            <div><label htmlFor="author">Author</label></div>
                             <div><input type="text" name="author" 
                                     placeholder="Author's name" /></div>
-                            <div><label for="status">Status</label></div>
+                            <div><label htmlFor="status">Status</label></div>
                             <div><select name="status">
                                 <option value="none" disabled>Move to...</option>
                                 <option value="currentlyReading">Currently Reading</option>
@@ -37,7 +37,7 @@ class CreateBook extends Component {
                                 <option value="read">Read</option>
                                 <option value="none">None</option>
                               </select></div>
-                            <div><label for="image">Image</label></div>
+                            <div><label htmlFor="image">Image</label></div>
                             <div><ImageInput
                                     className='create-contact-avatar-input'
                                     name='bookUrl'

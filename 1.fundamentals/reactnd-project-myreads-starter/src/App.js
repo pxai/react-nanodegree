@@ -37,7 +37,7 @@ class BooksApp extends React.Component {
         books: state.books.concat([ book ])
       }))
       
-    //BooksAPI.update(book)
+    BooksAPI.update(book)
   }
 
 
