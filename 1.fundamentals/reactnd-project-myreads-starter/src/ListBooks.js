@@ -1,6 +1,5 @@
 import React from 'react';
 import BookShelf from './BookShelf';
-import { Link } from 'react-router-dom';
 import categories from './bookcategories'
 
 class ListBooks extends React.Component {

@@ -15,7 +15,7 @@ class CreateBook extends Component {
     render () {
         return (
             <div>
-                <Link className="close-create-contact" to="/">Close</Link>
+                <Link className="close-search" to="/">Close</Link>
                 <form onSubmit={this.handleSubmit} className="create-contact-form">
                         <div className="create-book-details">
                                       <ImageInput
