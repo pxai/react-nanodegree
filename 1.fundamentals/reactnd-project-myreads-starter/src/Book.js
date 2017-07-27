@@ -15,7 +15,9 @@ class Book extends React.Component {
                             <BookShelfChanger book={this.props.book} onUpdateBook={onUpdateBook} />
                           </div>
                           <div className="book-title">{this.props.book.title}</div>
-                          <div className="book-authors">{this.props.book.author}</div>
+                          { undefined != this.props.book.authors &&
+                            <div className="book-authors">{this.props.book.authors.join(', ')}</div>
+                          }
                         </div>
         )
     }

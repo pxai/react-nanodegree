@@ -29,8 +29,8 @@ class CreateBook extends Component {
                             <div><label htmlFor="author">Author</label></div>
                             <div><input type="text" name="author" 
                                     placeholder="Author's name" /></div>
-                            <div><label htmlFor="status">Status</label></div>
-                            <div><select name="status">
+                            <div><label htmlFor="shelf">Status</label></div>
+                            <div><select name="shelf">
                                 <option value="none" disabled>Move to...</option>
                                 <option value="currentlyReading">Currently Reading</option>
                                 <option value="wantToRead">Want to Read</option>

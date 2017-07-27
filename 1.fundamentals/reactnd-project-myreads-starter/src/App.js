@@ -49,10 +49,9 @@ class BooksApp extends React.Component {
       })
     })
   }
-
-
     createBook(book) {
       book.image = { width: 128, height: 192, backgroundImage: 'url("http://books.google.com/books/content?id=32haAAAAMAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72yckZ5f5bDFVIf7BGPbjA0KYYtlQ__nWB-hI_YZmZ-fScYwFy4O_fWOcPwf-pgv3pPQNJP_sT5J_xOUciD8WaKmevh1rUR-1jk7g1aCD_KeJaOpjVu0cm_11BBIUXdxbFkVMdi&source=gbs_api")' };
+      console.log(book);
     //BooksAPI.create(book).then(book => {
       this.setState(state => ({
         books: state.books.concat([ book ])
@@ -69,24 +68,28 @@ class BooksApp extends React.Component {
             </div>
 
         <Route path="/" exact render={() => (
-            <ListBooks books={this.state.books} categories={categories} 
+            <ListBooks 
+              books={this.state.books} 
+              categories={categories} 
               onUpdateBook={(book) => this.updateBook(book)}
             />
         )}/>
         <Route path="/search" exact render={({history}) => (
-            <SearchBooks books={this.state.searchedBooks}
+            <SearchBooks 
+              books={this.state.searchedBooks}
+              onUpdateBook={(book) => this.updateBook(book)}
               onSearchBook={(book) => {
               this.searchBook(book)
             }}
             />
         )}/>
         <Route path='/create' render={({ history }) => (
-          <CreateBook
-            onCreateBook={(book) => {
-              this.createBook(book)
-              history.push('/')
-            }}
-          />
+            <CreateBook
+              onCreateBook={(book) => {
+                this.createBook(book)
+                history.push('/')
+              }}
+            />
         )}/>
             <div className="open-search">
               <Link to='/search' className='open-search'>Search</Link>
