@@ -186,7 +186,7 @@ function mapStateToProps ({ food, calendar }) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    selectRecipe: (data) => dispatch(addRecipe(data)),
+    getCategories: (data) => dispatch(addRecipe(data)),
     remove: (data) => dispatch(removeFromCalendar(data))
   }
 }
